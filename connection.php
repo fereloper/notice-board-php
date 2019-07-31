@@ -1,8 +1,8 @@
 <?php
 class Connection {
     private  $server = "mysql:host=localhost;dbname=notices";
-    private  $user = "root";
-    private  $pass = "";
+    private  $user = "notice_board";
+    private  $pass = "notice_board_password";
     
     private $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,);
     protected $con;
@@ -12,7 +12,6 @@ class Connection {
         try
         {
             $this->con = new PDO($this->server, $this->user,$this->pass,$this->options);
-            $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $this->con;
         }
         catch (PDOException $e)
