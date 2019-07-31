@@ -12,6 +12,7 @@ class Connection {
         try
         {
             $this->con = new PDO($this->server, $this->user,$this->pass,$this->options);
+            $this->con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $this->con;
         }
         catch (PDOException $e)
@@ -19,6 +20,7 @@ class Connection {
             echo "There is some problem in connection: " . $e->getMessage();
         }
     }
+    
     public function closeConnection() {
         $this->con = null;
     }
