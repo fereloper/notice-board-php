@@ -25,8 +25,23 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
 </head>
 <body>
 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Notice Board</a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/adminaddstory.php">Dashboard </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/board.php">Notice Board </a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 <div class="container pt-5">
+    
     <div class="row">
         <div class="col-md 12">
             <?php if (isset($_SESSION['error_message'])):?>
